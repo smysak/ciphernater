@@ -29,6 +29,7 @@ def ciphernate(string, shift_amount)
             print char
         end
     end
+    puts ""
 end
 
 ciphernate(get_string, get_shift)
