@@ -4,6 +4,7 @@ def get_string
 end
 
 def get_shift
+    puts ""
     puts "Enter the desired shift:"
     shift_amount = gets.strip
     if shift_amount.match?(/\A-?[0-9]+\z/)
@@ -17,6 +18,7 @@ end
 
 
 def ciphernate(string, shift_amount)
+    puts ""
     string.each_char do |char|
         if char.match?(/\A[A-Za-z]+\z/)
             shifted_char = ((char.downcase.ord + shift_amount - 19) % 26 + 97).chr
