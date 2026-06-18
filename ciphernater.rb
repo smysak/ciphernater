@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-def get_string
-  puts "Enter the message to be enciphered:"
+def enter_string
+  puts "Enter the message to be enciphered:" # rubocop:disable Style/StringLiterals
   gets.strip
 end
 
-def get_shift
+def choose_shift
   puts ""
   puts "Enter the desired shift:"
   shift_amount = gets.strip
@@ -35,4 +35,4 @@ def ciphernate(string, shift_amount)
   puts ""
 end
 
-ciphernate(get_string, get_shift)
+ciphernate(enter_string, choose_shift)

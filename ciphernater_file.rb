@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-def get_string
+def enter_string
   puts "Enter the message to be enciphered:"
   puts "(When finished, enter Ctrl+D on a new line. Use Ctrl+Z on Windows.)"
   ARGF.read
 end
 
-def get_shift
+def choose_shift
   puts ""
   puts "Enter the desired shift:"
   shift_amount = gets.strip
@@ -27,11 +27,11 @@ def ciphernate(string, shift_amount)
     if char.match?(/\A[A-Za-z]+\z/)
       shifted_char = ((char.downcase.ord + shift_amount - 19) % 26 + 97).chr
       output <<
-      if char == char.upcase
-        shifted_char.upcase
-      else
-        shifted_char
-      end
+        if char == char.upcase
+          shifted_char.upcase
+        else
+          shifted_char
+        end
     else
       output << char
     end
@@ -42,4 +42,4 @@ def ciphernate(string, shift_amount)
   puts "Your message has been saved to 'enciphernated_message.txt'."
 end
 
-ciphernate(get_string, get_shift)
+ciphernate(enter_string, choose_shift)
